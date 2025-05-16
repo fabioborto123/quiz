@@ -1,10 +1,11 @@
 package com.quiz.back.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigInteger;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -13,15 +14,15 @@ import java.math.BigInteger;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Answer {
+public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String description;
+    private LocalDateTime date;
 
     @ManyToOne
-    @JoinColumn(name = "question_id")
-    private Question question;
+    @JoinColumn(name = "player_id")
+    private Player player;
 }

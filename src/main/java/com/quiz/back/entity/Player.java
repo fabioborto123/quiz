@@ -1,7 +1,9 @@
 package com.quiz.back.entity;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.*;
 
 import java.math.BigInteger;
@@ -13,15 +15,13 @@ import java.math.BigInteger;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Answer {
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String description;
+    private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "question_id")
-    private Question question;
+    private String password;
 }
